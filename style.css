@@ -1,0 +1,180 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  /* limita a largura da lista */
+  margin: 0 auto 40px;
+  /* centraliza horizontalmente + margem embaixo */
+  text-align: center;
+  /* centraliza o texto dos itens */
+}
+
+li {
+  background-color: #1e1e1e;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  transition: background 0.3s;
+  width: 100%;
+  /* faz o item ocupar toda a largura do ul */
+  box-sizing: border-box;
+  text-align: center;
+  /* centraliza o texto dentro do item */
+}
+
+li:hover {
+  background-color: #333;
+}
+
+a {
+  color: #57ff20;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #f8f5f2;
+  text-align: center;
+  padding: 1px 10px;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-content img {
+  height: 40px;
+  margin-bottom: 10px;
+  width: 40px;
+  /* importante para deixar redondo */
+  border-radius: 50%;
+  /* isso deixa a imagem circular */
+  object-fit: cover;
+  /* evita distorção */
+}
+
+.footer-content p {
+  color: #555;
+  font-size: 14px;
+  margin: -1px;
+}
+
+body,
+html {
+  margin: 0px;
+  padding: 0px;
+}
+
+footer {
+  background-color: #f8f5f2;
+  text-align: center;
+  padding: 0px 0px;
+  width: 90vw;
+  /* força ocupar toda a largura da tela */
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.botao-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #E1306C;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
+  /* espaço acima do botão */
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.botao-instagram img {
+  width: 24px;
+  height: 24px;
+}
+
+.botao-instagram:hover {
+  background-color: #b0275e;
+}
+
+button {
+  background-color: #0e0aff;
+  color: white;
+  border: 2px solid #f8f5f2;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #1b3350;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* === ADIÇÃO: RESPONSIVIDADE PARA CELULARES === */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+    /* menos padding nas laterais */
+  }
+
+  ul {
+    max-width: 100%;
+    /* usa 100% da largura da tela */
+    margin-bottom: 30px;
+  }
+
+  li {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  button,
+  .botao-instagram {
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+    /* botão ocupa toda largura para facilitar toque */
+    box-sizing: border-box;
+  }
+
+  footer {
+    width: 100vw;
+    /* ocupar toda largura da viewport */
+    padding: 10x 5px;
+  }
+}

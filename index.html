@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meus Links - Troco Online</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #001f4d, #000000);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header {
+      max-width: 900px;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #fdbb2d;
+      text-shadow: 0 0 10px #fdbb2d;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    header h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+      margin: 10px 0 5px 0;
+      color: #ddd;
+    }
+
+    header u {
+      font-size: 0.9rem;
+      color: #bbb;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    /* Botão Instagram */
+    .botao-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #E1306C;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+      margin-bottom: 15px;
+    }
+
+    .botao-instagram img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .botao-instagram:hover {
+      background-color: #b0275e;
+    }
+
+    button.sair {
+      background-color: #2d4a73;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(45, 74, 115, 0.8);
+      transition: background-color 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    button.sair:hover {
+      background-color: #1c334f;
+    }
+
+    /* Container dos links em grid */
+    #link-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    /* Cada link em quadradinho */
+    #link-list a {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px 40px;
+      border-radius: 20px;
+      max-width: 900px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid #fdbb2d;
+      transition: transform 0.3s ease;
+      color: #fdbb2d;
+    }
+
+    #link-list a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    footer {
+      background-color: #f8f5f2;
+      text-align: center;
+      padding: 10px 20px;
+      width: 100vw;
+      box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+      margin-top: auto;
+    }
+
+    .footer-content {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-content img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .footer-content p {
+      color: #555;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 650px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      #link-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<head>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+</head>
+
+<body>
+  <header>
+    <header>
+      <h1>Mega Pack - Troco Online</h1>
+    </header>
+
+
+    <a href="https://www.instagram.com/troco.online?igsh=MWF1cWF3am92b3p1ZA==" target="_blank" rel="noopener noreferrer"
+      class="botao-instagram">
+      <img src="images/instagram.png" alt="Instagram" />
+      Instagram
+    </a>
+
+    <br />
+
+    <button class="sair" onclick="sair()">Sair</button>
+
+    <h2>
+      Aqui você encontra os melhores conteúdos da internet, prontos para revenda ou uso próprio.
+    </h2>
+
+    <u>
+      Expressamente proibida a revenda dos seus dados de login deste portal. Todos os conteúdos nele estão liberados
+      para revenda.
+    </u>
+
+    <p><strong><em>Selecione um link abaixo para acessar os materiais.</em></strong></p>
+  </header>
+
+  <main id="link-list">
+    <!-- Links serão inseridos via JavaScript -->
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <img src="images/renda.png" alt="Logo da Empresa" />
+      <p>© 2025 Troco Online. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBdztMtryFkEIZMFmxem8YS7EtQiceQMYc",
+      authDomain: "links-site-9fc41.firebaseapp.com",
+      projectId: "links-site-9fc41",
+      storageBucket: "links-site-9fc41.appspot.com",
+      messagingSenderId: "1018261083148",
+      appId: "1:1018261083148:web:174e3ac80a3d9adf764a29"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Verifica se o usuário está autenticado
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      } else {
+        try {
+          const docRef = doc(db, "usuarios", user.uid);
+          const docSnap = await getDoc(docRef);
+
+          const boasVindas = document.getElementById("boas-vindas");
+          if (boasVindas) {
+            boasVindas.textContent = docSnap.exists()
+              ? `Olá, ${docSnap.data().nome}`
+              : `Olá, ${user.email}`;
+          }
+        } catch (error) {
+          console.error("Erro ao buscar nome:", error);
+        }
+      }
+    });
+
+    // Função para logout
+    window.sair = function () {
+      signOut(auth)
+        .then(() => {
+          window.location.href = "login.html";
+        })
+        .catch((error) => {
+          alert("Erro ao sair: " + error.message);
+        });
+    };
+
+    // Lista dos links
+    const links = [
+      { "title": "SOCINATOR DOMINATOR ENTERPRISE ATIVADO - GERENCIADOR REDE SOCIAIS✨", "url": "https://drive.google.com/file/d/1t-7cx2QnmYPkBwgGbSjwisQBRsmVd2Mg/view?usp=drive_link" },
+      { "title": "SWITTE DE IAS PRO GRTAUITA✨", "url": "https://lmarena.ai/?mode=direct" },
+      { "title": "AUTO RESPONDER FOR IG_PREMIUM.APK✨", "url": "https://drive.google.com/file/d/1lvp20EWhVVhWd-T-eTfcdeOlWQylxut-/view?usp=drive_link" },
+      { "title": "GROWBOT INSTAGRAM VITALÍCIO✨", "url": "https://drive.google.com/file/d/1goSzO9oiw1Hh1D6ig8fnoKwRaZBiiseH/view?usp=drive_link" },
+      { "title": "VIVER DE YOUTUBE - KARYNE  OTTO🌟", "url": "https://drive.google.com/drive/folders/0B-DxnGTzsmWcamtaTzgta180Rms?resourcekey=0--69tFiO9iu21ymNOarMmwA&amp;usp=share_link" },
+      { "title": "MODELOS DE CURRICULUM 100% EDITAVEIS", "url": "https://www.canva.com/pt_br/curriculos/modelos/" },
+      { "title": "GESTÃO DE TRÁFEGO P/ NEGÓCIOS - REDE SOCIAIS", "url": "https://drive.google.com/drive/folders/16zl2LgIP-aIkFMcY9B6DoTjrCli7KH_2" },
+      { "title": "+300 WORKFLOWS PARA N8N✨", "url": "https://drive.google.com/drive/folders/13q8gG1nlH04-t-dRFa14IdHvltzelaql" },
+      { "title": "MVM - MENTORIA VIRAL MILIONÁRIA", "url": "https://drive.google.com/drive/folders/1ZbD2w-GKtTq-eZVoOezst1djIQmtTWBh" },
+      { "title": "PACK PREMIUM 600 LOGOTIPOS EDITÁVEIS✨", "url": "https://drive.google.com/drive/folders/1aWI2q9yg9-xZajcT-E4Tuta1354OJ7Qp" },
+      { "title": "PACOTÃO DE ÍCONES PREMIUM✨", "url": "https://drive.google.com/drive/folders/1yOoGdU0KFPhLWW4PxZSi6qzo8q7oChZ3" },
+      { "title": "+ 3000 THEMES E PLUGINS PREMIUM WORDPRESS✨", "url": "https://drive.google.com/drive/folders/1_sN-u6V3FS9MAMVTgMgvj3JoBFDyNATG?usp=drive_link" },
+      { "title": "CLONADOR DE PAGINAS 2025 + REVENDA", "url": "https://drive.google.com/drive/folders/13TPS4jN-dJAhx9SQFSkCk3g_g69SC815?usp=sharing" },
+      { "title": "SUPER PACK - 20 PRODUTOS DIGITAIS", "url": "https://drive.google.com/file/d/19sD8LRtaDbzzOYdJRiO1hX5zK1Whdgck/view?usp=drivesdk" },
+      { "title": "ACERVO DIGITAL TODAS AS ÁREAS PARA ESTUDOS", "url": "https://drive.google.com/drive/folders/14IMArN-01uJOn3Oud7066NvDsV_0vpVu?usp=drive_link" },
+      { "title": "CAPCUT PRO APK- ANDROID", "url": "https://docs.google.com/document/d/1KQm1mxK0VdcRL328pe1hIH7aeJdevP7n61dLUx_lDjo/edit?usp=drivesdk" },
+      { "title": "IA GERADOR DE TEXTO PARA ÁUDIO", "url": "https://ttsmaker.com/" },
+      { "title": "WA SENDER PRO + GERADOR DE LICENÇAS + ATUALIZAÇÕES✨", "url": "https://docs.google.com/document/d/1ynNIi0d1TuhsqVKRGdtwsWQJ3CPzixokPIIJq_toWsw/edit?usp=sharing" },
+      { "title": "INSTABOT PRO + GEREDOR DE LICENÇAS VERSÃO 7.1.8✨", "url": "https://drive.google.com/drive/folders/1m_NVAxf_2st2o6XCRcsve3sUrMKsVea3?usp=sharing" },
+      { "title": "WADEFENDER PRO + GERADOR DE LICENÇAS 2025✨", "url": "https://drive.google.com/file/d/18HiD5rwa7FLKpMkww4yrrOwER8nIxwx_/view?usp=drive_link" },
+      { "title": "SUPER PACK DESIGNER - TEM DE TUDO", "url": "https://drive.google.com/drive/folders/1GOeL9uYvip5pigoyh0aCJt7vknt73wrJ" },
+      { "title": "LEONARDO AI PRO - APK", "url": "https://drive.google.com/file/d/1kL2Jdb5uV-JzczyfK9weVHg8YEunM4Qz/view?usp=drivesdk" },
+      { "title": "FERRAMENTAS PARA MONETIZAÇÃO", "url": "https://terabox.com/s/1a1e0ts1tW196JG8Sr4wWgA" },
+      { "title": "SUPER PACK DE HQS", "url": "https://1024terabox.com/s/1CL81JrLXBaG73dLcoY9Ozg" },
+      { "title": "12 TB+ DE ARQUIVOS E CURSOS ✨", "url": "https://teraboxapp.com/s/1jZoqyVet-9IX6QO3fsCOkQ" },
+      { "title": "MÉTODO VGL DE VENDAS - TIAGO FONSECA", "url": "https://drive.google.com/drive/u/0/mobile/folders/18w8WyRCCBvwmlfQ0EZpMblXuCzve7tKS" },
+      { "title": "DESENVOLVA APPS PARA ANDROID - JAMILTON DAMASCENO", "url": "https://drive.google.com/drive/u/0/folders/1ErJlH7AYq4KoUK2fGAG4khD-Hyh4Cooj?fbclid=IwAR3105ciaLg3gtDIbh7FqarYWg1boNQua0ezz8IVfffV_Ncmcq_zOa2Y6Us" },
+      { "title": "CONTADOR PROFISSIONAL - VIVER DE CONTABILIDADE", "url": "https://drive.google.com/drive/u/0/mobile/folders/1QzeeOYX2Z3LYnVAmmtTKb2snI0FxCl73?usp=sharing" },
+      { "title": "COREL DRAW 2025", "url": "https://drive.google.com/drive/folders/1SOnEw1n3kueLbEd5_fwUlQi9I83Umydw?usp=sharing" },
+      { "title": "CONTAS MY FAMILY CINEMA", "url": "https://docs.google.com/document/d/1T9FNGb-1bL2l-64CQoHl8r-JFRVJTFtigb44kNPEt8c/edit?usp=drivesdk" },
+      { "title": "PLUGINS PREMIUM PARA WP", "url": "https://drive.google.com/drive/folders/1Qx71H1sXgbOXaqNavmsAYL_jkT_Nzstt" },
+      { "title": "PACK COM 200GB DE ATIVOS - PREMIUM ASSETS", "url": "https://drive.google.com/drive/folders/1w1s7dyddloz8u2ASvbxYvXhGHnbxXKhJ" },
+      { "title": "PLATAFORMA DE IAS - CHATGPT PRO -  CANVA PRO + TUTORIAL", "url": "https://drive.google.com/file/d/19Vpaj3bb20iDC903WTbebiDAzktdH9lg/view?usp=sharing" },
+      { "title": "PROGRAMAÇÃO ROBÔ 2.0 - DELTA TRADER", "url": "https://1024terabox.com/s/1rMtu-wW1AnOvrwRONo5Qag" },
+      { "title": "➕ 𝐂𝐎𝐍𝐓𝐄𝐔𝐃𝐎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌", "url": "https://drive.google.com/drive/folders/14Xb_S9ybFNMcDf6AKQ4nuLcg5a0VYnA6" },
+      { "title": "𝐃𝐑𝐈𝐕𝐄 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐃𝐄 𝐅𝐄𝐑𝐑𝐀𝐌𝐄𝐍𝐓𝐀𝐒", "url": "https://drive.google.com/drive/folders/17LZedpTo0s3KN-G-pBnJ54fPuR9pjs2k" },
+      { "title": "𝐒𝐖𝐈𝐓𝐓𝐄 𝐃𝐄 𝐈𝐀 ➕ 𝐆𝐄𝐑𝐀𝐃𝐎𝐑 𝐃𝐄 𝐈𝐌𝐀𝐆𝐄𝐍𝐒", "url": "https://chat.betterai.art/" },
+      { "title": "CHATGPT GRATUITO.", "url": "https://heck.ai/pt" },
+      { "title": "CANVA PRO", "url": "https://docs.google.com/document/d/13ofbhugQ-dRq9ScgOIq-s0z3iVnAIyPnrc3fNzfW1PQ/edit?usp=drivesdk" },
+      { "title": "CONTABILIDADE DE A a Z - DE SILVIO SANDE", "url": "https://drive.google.com/drive/mobile/folders/179U3OlQRLNahiOFf_uQe6505rz0xl0xV?usp=sharing" },
+      { "title": "CANVA PRO &amp; CHATGPT PRO + TUTORIAL", "url": "https://drive.google.com/file/d/1RP6MjTe5MGH7Lq8LEvLlWvNgTF0VfN60/view?usp=sharing" },
+      { "title": "PAINEL DE RIFAS + TUTORIAL DE INSTALAÇÃO", "url": "https://drive.google.com/drive/folders/1uLs1nZV3MaHfttrSFdPFN8DmU3fpwlxD" },
+      { "title": "SITE IPTV COMPLETO + INSTALAÇÃO + PAINEL ADM", "url": "https://drive.google.com/drive/folders/1X1Ewfw39x-ixa9gFzyqgz4m1qVu7mIok" },
+      { "title": "LIVRO - AS 48 LEIS DO PODER", "url": "https://drive.google.com/file/d/1Y2TExI8niqNbHKNs5zReQCqjXQg9cCkH/view?usp=drive_link" },
+      { "title": "BIBLIOTECA DO TI", "url": "https://drive.google.com/drive/folders/1AnNVHVEhmznbk9azvJSLPNATw23-uca5?usp=sharing" },
+      { "title": "CURSO DE MAQUIAGEM EM VÍDEO", "url": "https://drive.google.com/drive/mobile/folders/0B6SdRrvnIDeuZnM5V1JfUEpMOUE?resourcekey=0-WXW5jFCkav9jc1sDvvuHcQ&amp;usp=sharing" },
+      { "title": "SUPER PACK PARA DESIGNER", "url": "https://drive.google.com/drive/folders/1-0SEycRjpI8KAde3l56sy-j7j-nHVzmT?fbclid=IwAR1shEMVt6PUapaMj1hJp-D6yCNJH1PG7kFRqNuoo-q0Mtp-OjVvVzZAgNs" },
+      { "title": "WHATIKET SAAS COM INTEGRAÇÃO TYPEBOT", "url": "https://drive.google.com/drive/folders/1d485mbhf0BmtVvIoMEUVBLTBWcmDlGZE" },
+      { "title": "CARDÁPIO DIGITAL - RESTAURANTE - PIZZARIA - LANCHONETES", "url": "https://drive.google.com/drive/folders/1TyvxRSnTN72IwnNcUTdG14teh7cbQ3po" },
+      { "title": "SUPER PACK VÍDEOS VIRAIS - ALCAR ALPHA.", "url": "https://drive.google.com/drive/folders/1MyCma0fLjR0H02sw_J2CtMWt4WRUv5N2?usp=drive_link" },
+      { "title": "PACK PÓS FORMATAÇÃO COMPLETO", "url": "https://terabox.com/s/1zJP_jX6atavAmeaJgh03ag" },
+      { "title": "AUTODESK REVIT PRO 2025", "url": "https://terabox.com/s/12Ywrct8Xb_4ixZI1OI15eA" },
+      { "title": "CONTEÚDO PREMIUM - ACESSE E VERÁ 🥇", "url": "https://drive.google.com/file/d/1Ilr37_0gCQMvu1rRNyWWF3AdEEjFJMCE/view?usp=drive_link" },
+      { "title": "CONTEÚDOS PARA ENEM E VESTIBULÁRES - ATUALIZADO 2025", "url": "https://drivedepobre.com/pasta/cabdda76f2" },
+      { "title": "PACK DE CURSOS - TECNOLOGIA E PROGRAMAÇÃO 🌐", "url": "https://drivedepobre.com/pasta/ddee0a5344" },
+      { "title": "SUPER PACK DE CURSOS - VÁRIOS IDIOMAS", "url": "https://drivedepobre.com/pasta/491345df36" },
+      { "title": "COREL DRAW - ATUALIZAÇÃO DEFINITIVA", "url": "https://terabox.com/s/1pX4mJS1hkIM1hQ04lDJUIw" },
+      { "title": "PACK PROGRAMAS ADOBE CRIATIVE CLOUD", "url": "https://www.mediafire.com/folder/ul7ucmnc5k6yr/Adobe_Creative_Cloud_All_Apps_2024_Latest_Updated" },
+      { "title": "MEGA PACK DE CONTEÚDOS - MERCADO GRINGO", "url": "https://drive.google.com/drive/folders/1OTUb6DxON7Hs-Dw2C7dpXiWFLDPIiHcu" },
+      { "title": "PACK DRIVE COM MILHARES DE CONTEÚDO LUCRATIVOS", "url": "https://1024tera.com/s/1FAOHP8XhnLPnMb-v8fbCbQ" },
+      { "title": "DRIVE MILIONÁRIO - CONTEÚDO PREMIUM", "url": "https://1024terabox.com/s/1FWgXeGl7jnSTs6l6UZGuXQ" },
+      { "title": "APRENDA PUXAR LISTAS IPTV", "url": "https://drive.google.com/drive/folders/1f1LM6VW2ybofaIN5XtB0Q6nDyu0FJg4w" },
+      { "title": "TENHA SEU PROPRIO PAINEL IPTV - SCRIPT E INSTALAÇÃO COMPLETA", "url": "https://drive.google.com/drive/folders/1rTwO1irv4Y8f6_7Fu72sOOzCkLnmqdk-" },
+      { "title": "PACK CURSOS MANUTENÇÃO DE CELULAR", "url": "https://teraboxapp.com/s/1m2HwqdEVKFwQxNwfcAriKw" },
+      { "title": "CURSO DE CANTO - MAURO HENRIQUE", "url": "https://drive.google.com/drive/mobile/folders/11tXofps0uixLQoZGoV9m53e2A3TZFY4j?fbclid=IwAR2CCOd8Z6eEfAgl1VDoJpEIGvrxkKLHs8GVrUIQq_Uyzp7TF7S1qfRfhRw" },
+      { "title": "PACK CURSOS PLR EM VIDEO", "url": "https://drive.google.com/drive/folders/1ZodUPTSSxxI-eI-aRdv5_JdP0RSSJ_EU" },
+      { "title": "PACOTE PLR EM VIDEO １", "url": "https://drive.google.com/drive/folders/16cRT8fodZmTw6sDiPMShnQgae8q_XZma" },
+      { "title": "➕ DE 10000 TEMPLATES CANVA", "url": "https://drive.google.com/file/d/1i1lSYXBLN6TyVXDSgmsa2GkiaxA019Kg/view?usp=drivesdk" },
+      { "title": "PACK NICHOS VIRAIS PRA VIRALIZAR SEU CANAL", "url": "https://drive.google.com/drive/folders/1V__ZCtFZfAvzO2oLdwwk9SCP25ol8tV_" },
+      { "title": "PACK COM 1BT DE FILMES -TOP🔥", "url": "https://www.1024tera.com/wap/share/filelist?surl=7ClGAtLFPxlnP9BeLORSJw&amp;fbclid=IwY2xjawKB5BJleHRuA2FlbQIxMQABHmfvWEBduqUcwaY1vZwP2PLgpH1YhL49THqV0Q4JU93uNGEIJeDAneaKzN3J_aem_pMOLpalpDZDUnF0jEqwyXw" },
+      { "title": "PACK LIVROS CIENTÍFICOS", "url": "https://drive.google.com/drive/folders/1RPCXFiCAo4uXz7WQlOwdvHmGsCXbP0iu?usp=sharing" },
+      { "title": "EDIÇÃO CRIATIVA DE VÍDEOS PARA YOUTUBE", "url": "https://drive.google.com/drive/folders/1YpBq-mgnhz-uw5um8xXYcemjbPEChm4V" },
+      { "title": "PACK DE EDIÇÃO CANAL DARK - EXCLUSIVO", "url": "https://drive.google.com/drive/folders/1GDCbNYfzathkAu2GL-7Mg9NXorBdQNT2" },
+      { "title": "ADOBE ACROBAT PRO 2024 - v24.2.20895 x64 MULTLINGUAL", "url": "https://www.mediafire.com/file/03mf0txeds25kk5/Adobe_Acrobat_Pro_2024_%2528v24.2.20895%2529_x64_Multilingual.rar/file" },
+      { "title": "CORTES DE VÍDEOS VIRAIS - VÁRIOS NICHOS", "url": "https://drive.google.com/drive/folders/1loia9_RBfYWziatowFI0pA8MBfRec_Qf" },
+      { "title": "CORTES DE FILMES/SÉRIES - VIRAIS", "url": "https://drive.google.com/drive/folders/1aikmWg1ymQkRiQs4-Zc6j7aWSiHeqTq9" },
+      { "title": "PACK DE MÚSICAS 2025 - MP3", "url": "https://drive.google.com/drive/folders/15cqAXQl5-h--tqfMYmoNCu7B9RiQAoWh" },
+      { "title": "➕ 30 MIL IMAGENS PNG", "url": "https://drive.google.com/drive/u/0/mobile/folders/1VJ0oAtQbPuhdsJ5Tin2FMgfxOb2D9Qj2" },
+      { "title": "CURSO DESIGN GRÁFICO EM VÍDEO - COMPLETO", "url": "http://drive.google.com/drive/folders/1gfLEyzql37rxMhmzkr2uI2EEtLRuiFNa" },
+      { "title": "PACK EMOJIS 3D PARA WHATSAPP", "url": "https://drive.google.com/drive/mobile/folders/1FFmnQrkYTUkh29ruanUgtDy9Ad-nx8g4" },
+      { "title": "PACOTE COM + 200 FERRAMENTAS PARA SEU NEGÓCIO", "url": "https://drive.google.com/drive/folders/1gzUU0wvJNlRtxUqBkyeAdU4k0GFo94Hq?usp=drive_link" },
+      { "title": "490Gbs SOBRE MKT DIGITAL - CONTEÚDO EM INGLÊS", "url": "https://drive.google.com/drive/folders/1BLu8z5NQLThtTiXL0YlmMBu-hqhQOX0m" },
+      { "title": "MEGA CATALOGO DE CURSOS - ESTE É TOP", "url": "https://mega.nz/folder/6fxBRSDD#3v-snDKSjlvpovuYpLyhYg" },
+      { "title": "PACK PARA TYPEBOT", "url": "https://drive.google.com/drive/folders/1uD9Cc4sU6s4w3a1nRySjw0Z4Nk3HHSst" },
+      { "title": "PACK CANVA PLUS", "url": "https://terabox.com/s/1N5aoXasS5uIHUux6kqRnlA" },
+      { "title": "PACK DE IMAGENS PARA FLAYERS", "url": "https://drive.google.com/drive/folders/1me6I5aLFe6WOdH8l83SEmS6uHCSBqg9x?usp=sharing" },
+      { "title": "PACK LAYOUTS MÍDIA SICIAIS", "url": "https://drive.google.com/drive/folders/1d9AgjYnrkWhe11crOQTfF6vFijR76e4D" },
+      { "title": "PACK PREMIUM WEB DESIGNER", "url": "https://drive.google.com/drive/folders/1ujudG2pDZaBUSqme9FgmwLxuFo7R8I9t" },
+      { "title": "ENEM:REDAÇÃO/APOSTILAS/EXERCÍCIOS/PROVAS", "url": "https://drive.google.com/drive/folders/1FfQCt7WfcICHF29zILUX0POqVmXx8KhB" },
+      { "title": "➕12 MIL PLANILHAS VÁRIOS NICHOS", "url": "https://drive.google.com/drive/mobile/folders/1yuU14kiNhnyUHqv7SzvN9Pc1TIz6xnLl?usp=sharing" },
+      { "title": "A MALETA DO GESTOR", "url": "https://drive.google.com/drive/folders/1lmYfTEZSmqz1NiliFBBkzWTtkXTaaFix?usp=sharing" },
+      { "title": "CANVA EVOLUTION - RAYSA KEILA", "url": "https://drive.google.com/drive/folders/1Og6zsVqUNHo6MpdV1rfrkhC7Irm9i9DC" },
+      { "title": "BÍBLIA SAGRADA - JOÃO FERREIRA DE ALMEIDA", "url": "https://drive.google.com/file/d/0B1M6QlX3Uw1cLUI0cEttcEt1YXc/view?usp=drivesdk&amp;resourcekey=0-EtZB4U_OwqAyRUGm5D7nCA" },
+      { "title": "PACK DE MÚSICAS MP3🎧", "url": "https://drive.google.com/drive/mobile/folders/1qIHuoW5wvQt0jRyIW6AteUYG-ymIzkyM" },
+      { "title": "CURSO ELETRICISTA INDUSTRIAL", "url": "https://1024terabox.com/s/1kqePfMlEjGvtNCeO4GIf7Q" },
+      { "title": "🤑𝐌𝐄𝐆𝐀 𝐏𝐀𝐂𝐊 𝐀 𝐂𝐇𝐀𝐕𝐄 𝐃𝐀 𝐈𝐍𝐓𝐄𝐑𝐍𝐄𝐓", "url": "https://drive.google.com/file/d/1uLf6WFGQpTrXdFQI6iT6M8K8rZP76g3b/view?usp=drive_link" },
+      { "title": "PACK EDIÇÃO DE VÍDEOS", "url": "https://drive.google.com/drive/u/0/mobile/folders/1GDCbNYfzathkAu2GL-7Mg9NXorBdQNT2?usp=sharing" },
+      { "title": "➕ 15 MIL PLR PRONTAS", "url": "https://drive.google.com/drive/folders/1ZK7VKxBP9X2-RdKDlX1e8h8hciy_RWdv?usp=sharing" },
+      { "title": "ACERVO DE LIVROS &amp; APOSTILAS", "url": "https://drive.google.com/drive/u/0/mobile/folders/14IMArN-01uJOn3Oud7066NvDsV_0vpVu" },
+      { "title": "𝐃𝐑𝐈𝐕𝐄 𝐌𝐈𝐋𝐈𝐎𝐍𝐀́𝐑𝐈𝐎 🤑", "url": "https://drive.google.com/drive/folders/1vVSe1T5d5UqGfszt8DtVX_vAhfnTrHvB" },
+      { "title": "➕ 180 LIVROS SOBRE MKT DIGITAL", "url": "https://drive.google.com/drive/folders/1go1kGH8H56m_KL332MUz8e7tTfDarLWg" },
+      { "title": "CURSO THIAGO FINCH", "url": "https://drive.google.com/drive/folders/1USagCFHZM76TFBaCej-T-IKkyBKFPBMH" },
+      { "title": "CURSOS DE REDAÇÃO EM VÍDEO", "url": "https://drive.google.com/drive/folders/18AjbkCsTe9Vf4CwLLz-nDCK-12Pj-ZtI?usp=sharing" },
+      { "title": "LISTA DE LEADS PREMIUM", "url": "https://drive.google.com/drive/folders/1cyMW-UmRR2xgZ-a2MfZ3ZT-X5z7KVfTr?usp=sharing" },
+      { "title": "ACESSO PREMIUM A VARIAS FERRAMENTAS", "url": "https://drive.google.com/drive/u/3/folders/10obS7EXXAMZREEp6fTeEEqTQwvBBcsO2" },
+      { "title": "TÉCNICO EM SEGURANÇA DO TRABALHO", "url": "https://drive.google.com/drive/folders/1IuqFjvyTbvHF_fMNq1XJJpGAjzVllu4W" },
+      { "title": "LIVROS INFANTIS ILUSTRADOS", "url": "https://drive.google.com/drive/folders/1LTXjyowGbOO535UI-lxFnsu7hMfucgKM" },
+      { "title": "MATERIAIS PARA CONCURSOS", "url": "https://drive.google.com/drive/folders/1yT6KIZVCO29Oc4rbnxL3t_BLwI8npOfS" },
+      { "title": "MATERIAL APOIO VESTIBULAR E ENEM", "url": "https://drive.google.com/drive/folders/1PmX2epd9gweqeVrQuWRWQ8-UrYZMPlIZ" },
+      { "title": "LIVRO O PEQUENO PRÍNCIPE", "url": "https://drive.google.com/file/d/1BD0kwWUEKixOAxuOIK2caD_HS6h0Ql_B/view?usp=drivesdk" },
+      { "title": "MATEMÁTICA PARA ENSINO MÉDIO", "url": "https://drive.google.com/file/d/0B_rM9Z9Bc3ihZ2UyaWV2dHVDWXc/view?usp=drivesdk&amp;resourcekey=0-572ngnFZ1QcWp_iGFaNhbw" },
+      { "title": "MATERIAL COMPLETO TÉCNICO EM ELETROTÉCNICA", "url": "https://drive.google.com/drive/folders/14Z05uzTJUU1O5-9BILdNRIegS54R-nvb" },
+      { "title": "MATERIAL COMPLETO TÉCNICO EM MECÂNICA", "url": "https://drive.google.com/drive/folders/1pmi0IVIi-xrp6FHPbvLybyk469nDbTNl" },
+      { "title": "12.000 LIVROS KINDLE DE A a Z", "url": "https://drive.google.com/drive/u/0/mobile/folders/1EoF3QomxBsoMTBGMEc_J5JW6r6cC-oCy?fbclid=IwAR2E7uhg1Ks0mcAjpSXP3D-cmrRdxb-RmUqH_OYjTzoq7csEgFLOHB5D77E" },
+      { "title": "BIBLIOTECA E LIVROS DE ODONTOLOGIA", "url": "https://drive.google.com/drive/mobile/folders/13EkxNR-VqL5cXGYKt6VN6pfVU_wegklO" },
+      { "title": "LISTA DE LEADS PREMIUM", "url": "https://drive.google.com/drive/folders/1cyMW-UmRR2xgZ-a2MfZ3ZT-X5z7KVfTr" },
+      { "title": "RecMasterPRO + CHAVE DE ATIVAÇÃO", "url": "https://mega.nz/folder/uwwUWLYZ#lVHUbS4Tw7xBAGuYq9jtCg" },
+      { "title": "CURSO INGLÊS EM VÍDEO/GABRIEL POLIGLOTA", "url": "https://drive.google.com/drive/folders/1--HmBCu1UVgIgFksTJYvhGXFpu5na7r9" },
+      { "title": "PACK VÍDEOS MENSAGENS DE DATAS COMEMORATIVAS", "url": "https://drive.google.com/drive/folders/0B7G7wRlZICfEfmpnOEZacG9xQV9yTW94YUZqd3VyWXpteHpoZ3FYWkJFMlFJeWw5aFdaOTQ?resourcekey=0-kp9uzSHcG6clU0w_6l5szA" },
+      { "title": "LIVROS CONCURSOS BR", "url": "https://drive.google.com/drive/folders/1NXafBCy8c1tgTnHyEpTpkxXRaKZTnGMf" },
+      { "title": "ADOBE FHOTOSHOP 2022", "url": "https://www.terabox.com/portuguese/sharing/link?surl=gQWDevQAQIIxY5EEQCLKvQ" },
+      { "title": "PACK CONTEÚDO PREMIUM", "url": "https://drive.google.com/drive/u/0/folders/1vVSe1T5d5UqGfszt8DtVX_vAhfnTrHvB" },
+      { "title": "CURSOS DE MUSICA E INSTRUMENTOS.", "url": "https://drive.google.com/drive/folders/1dY_bUwQIgXbDD8I3w2JIP_udmHbdGdGR" },
+      { "title": "SOFTWARE GERADOR QR CODE", "url": "https://mega.nz/file/a85TUb4K#5w_KEeTvEe5HkROO9DSuLxk4PtCyiqwBWalkBWp16q4" },
+      { "title": "CURSO NEGÓCIO DE 4 RENDAS", "url": "https://drive.google.com/drive/folders/1kwAxHdvFs1ccJQUh7g9LGDizSE5aXm4x?fbclid=IwAR2giYNa6_za8MRwlpZO9ou82V2KiTjJQaUEV3300V6F-JXsIffJf9GrZXU" },
+      { "title": "LIVROS DE INFORMÁTICA", "url": "https://drive.google.com/drive/folders/14Dmj1DrRfgmSY2rZIWmvLERyRRlCglkw" },
+      { "title": "LIVROS DE VETERINÁRIA", "url": "https://drive.google.com/drive/folders/1sRENhk3ZVBpxORg4jOchOBZjD9Y6HE5U" },
+      { "title": "CURSO PYTHON PROFICIONAL NA PRATICA", "url": "https://drive.google.com/drive/folders/1mKx77EFYnQHRoHT61--Gt6m-ncB1Z3z5" },
+      { "title": "WINDOWS 11 PRO ISO", "url": "https://mega.nz/file/bg53VByQ#CmMr6ZiaN6xCf8xU3IfSh7qOgrZAUM6CVJl-TVrlDXg" },
+      { "title": "CONVERSOR DE IMAGEM", "url": "https://mega.nz/folder/Ol5xQJ5Q#jYkJnORUvEl37l8NyUNOhA" },
+      { "title": "TODOS OS LIVROS P/ CONCURSOS", "url": "https://drive.google.com/drive/folders/1uF1THf7c38eboTOC1A2bX4cMVIV2MnY7" },
+      { "title": "CURSO CONSERTO CELULARES", "url": "https://drive.google.com/drive/folders/1yquG34Hvts6EecVRrbxmD-cQb-XdBikv" },
+      { "title": "LIVROS SAS", "url": "https://drive.google.com/drive/folders/1GZNr9bJ8YtX_i7hxkoJEUG8U5BvdHRI1" },
+      { "title": "LOGINS WPLAY IPTV.", "url": "https://drive.google.com/file/d/12YEbar9ZX3aAzZJVdUaiwmEzMyReC87C/view?usp=drive_link" },
+      { "title": "WaCRM - GERENCIADOR WHATSAPP", "url": "https://drive.google.com/file/d/18fRnYh-t4suJu_uaOcMZiDa-kJ7TMXhd/view?usp=drive_link" },
+      { "title": "APP WPLAY IPTV", "url": "https://drive.google.com/file/d/1SyqwKDoGCSMz3NcRlDYcEyAnixa_LWa_/view?usp=drive_link" },
+      { "title": "WaDefender 3.0", "url": "https://mega.nz/folder/68A3xBAB#3IV95pYE0n85rLeioTUPUQ" },
+      { "title": "HD DE JOGOS + 38 MIL JOGOS", "url": "https://www.terabox.com/portuguese/sharing/link?surl=4WZ8kUtfkJH_LDGXy9TXiA" },
+      { "title": "PACK SOFTWARE E CONTEÚDOS VARIADOS", "url": "https://drive.google.com/drive/folders/1MZgqGUFuHRtHQYeK-E0fYeWAYMHWgsUe?usp=sharing" },
+      { "title": "CATALOGO COM 6TB DE CURSOS PREMIUM", "url": "https://mega.nz/folder/khEiRZhB#3Otl79m5hThuvuwq7M6vJA" },
+      { "title": "100 EBOOKS PLR", "url": "https://drive.google.com/drive/folders/1uoORu0rtI2xt8n9JPuNfwQsPDMIyM3NV" },
+      { "title": "PACK LISTA DE FORNEÇEDORES", "url": "https://drive.google.com/drive/folders/1nLIFwcdMmdG-utPVUnCL62c8FYj-M6zp" },
+      { "title": "LANDING PAGE IPTV", "url": "https://www.canva.com/design/DAF2zXwFMi8/m9M0Ykc0vjjsQbegKfD2cg/view?utm_content=DAF2zXwFMi8&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink&amp;mode=preview" },
+      { "title": "+180 TEMAS PREMIUM SHOPIFY", "url": "https://drive.google.com/drive/folders/1HYhncaTKAnRYp8btyWl5fu5C55A4JO80" },
+      { "title": "100GB CURSOS PROGRAMAÇÃO DEV SAMURAI", "url": "https://class.devsamurai.com.br/?utm_source=pelando" },
+      { "title": "POWER PACK EBOOKS PLR - PLATINUM", "url": "https://drive.google.com/drive/folders/1aMubWAGo8Ia8_sk99b3vxufmRa_WWEo-?sort=13&amp;direction=a" },
+      { "title": "PACOTE DE MOCKUPS 3.0", "url": "https://drive.google.com/drive/folders/1x8CRyTIH9J4YWctzGry2f1cSTYzUhqw6" },
+      { "title": "KIT AGÊNCIAS DIGITAIS", "url": "https://www.terabox.com/portuguese/sharing/link?surl=b2oJW2Jz59SndbTxqX65Kw" },
+      { "title": "MENTORIA PATRICK SILVA ADS", "url": "https://drive.google.com/drive/folders/1hB0iG7bQoiEEtpJ_hIYd84ZkGm3ha9N7" },
+      { "title": "CURSO AMAZON MONSTER", "url": "https://drive.google.com/drive/folders/1aBiEGA2KZAp1f9aiocJeXmlNipbaKWai?fbclid=IwAR2gS8dydlh0R0YK1VjqPRjkQ0pqkg4Ci2BfSrsHfK8Szrw6X-JF2dMzG40" },
+      { "title": "JONATHAN BISPO", "url": "https://drive.google.com/drive/folders/1JFD7ecZl0omftAa4WBpMP986gk84dPiw" },
+      { "title": "DO ZERO AO MILHÃO - CARLOS WIZARD", "url": "https://mega.nz/folder/J6whxaAQ#aGJ_bGn63GCmijCMkfqEBw" },
+      { "title": "TEMPLATES LUCRATIVOS", "url": "https://drive.google.com/file/d/1dygBgy7j_8wbdkBB1qTSrP3-SWnhUaDn/view" },
+      { "title": "PACK DRIVE CHEIO DE FERRAMENTAS", "url": "https://drive.google.com/drive/folders/1yAogEgrTLY7YGhYdtbxylhT9CRazm-ty" },
+      { "title": "LIVROS DE MARKETING DOGITAL", "url": "https://drive.google.com/drive/folders/1go1kGH8H56m_KL332MUz8e7tTfDarLWg?usp=sharing" },
+      { "title": "CURSOS PREMIUM CONECT PASTA 1 &amp; 2", "url": "https://drive.google.com/drive/folders/1AYsHXmYnInMkDchdF8GowUnEBY5pbB4N" },
+      { "title": "DRIVE PREMIUM CURSOS", "url": "https://drive.google.com/drive/folders/1uprHfwyBddmigZCzkIgBmdwUSeZPUqPl" },
+      { "title": "DRIVE PLUS DIGITAL BLACK", "url": "https://drive.google.com/drive/folders/1KEGjg9wL5p7g5BL0RM-4ryZ6z0-e-IqH" },
+      { "title": "PACK TEXTURAS", "url": "https://drive.google.com/drive/folders/1aa5Sw_g90Dwn5mFmeqW4-0m5MLm6wKFJ" },
+      { "title": "12 MIL PLANILHAS DE TUDO", "url": "https://drive.google.com/drive/folders/1yuU14kiNhnyUHqv7SzvN9Pc1TIz6xnLl" },
+      { "title": "PLANILHAS CARLOS CUNHA", "url": "https://drive.google.com/drive/folders/1HmylGRC82lVQBWVfEhEqxozV_UltY90e" },
+      { "title": "120GB CURSOS MARKETING DIGITAL", "url": "https://brpucrs-my.sharepoint.com/:f:/g/personal/cristiano_dias_edu_pucrs_br/Ep3S_I2F4cpFvsVROvE69LEB9iTZCdJcW-Mh17qXcQENEg?e=HcmPdd" },
+      { "title": "PACK DE GANCHOS VIRAIS", "url": "https://drive.google.com/drive/folders/12876GCEBqtQvU_CidlKZkdA47ZXtZHYI" },
+      { "title": "PACK GOSPEL", "url": "https://drive.google.com/folderview?id=1cSaG_q8Mm38HylwvzXxAqFrjDBIuWV74" },
+      { "title": "PACK PETS DANCARINOS &lt; SENHA &gt; 7TE9N8", "url": "https://acessopremium.top/dance-pets-acess-n358-cliente358-login-ip-yrrete56pm-1111-abxqe793-lmbdcas94q2895ktjhaukanva6yhrfkl-pdm-vit-hlllllllaswq7640599574562912876866354262109764679339202038446575839093/" },
+      { "title": "PACK MARKETING DIGITAL", "url": "https://drive.google.com/drive/mobile/folders/1magh9KerUBMf8QHwYNGqNwaYair-0Td2/1hZBqzSUPWqgVonBewvoY2mOfrw7EHaK9?usp=sharing&amp;sort=13&amp;direction=a" },
+      { "title": "PLANILHA CONTROLE DE VOTOS", "url": "https://drive.google.com/drive/folders/1ervNuTrdw7-NcLzosUUWNSewxwCsnWl1?usp=sharing" },
+      { "title": "CURSOS PREMIUM", "url": "https://drive.google.com/drive/folders/1uprHfwyBddmigZCzkIgBmdwUSeZPUqPl" },
+      { "title": "CURSOS VIVER DO DIGITAL", "url": "https://drive.google.com/drive/folders/1sQBSQ0tiPImopMb38Rs6gexVetEhYzcn?usp=drive_link" },
+      { "title": "CURSOS ATUALIZADOS", "url": "https://drive.google.com/drive/folders/1k6AzGYDetwiHU_WBvDgF10HRYRFtMRYQ?usp=drive_link" },
+      { "title": "CURSOS DIVERSOS 𝐈𝐈", "url": "https://drive.google.com/drive/folders/1vRFjw_rcdllg0p9gC4R468hRs43McPW2?usp=drive_link" },
+      { "title": "CURSOS DE DIREITOS", "url": "https://drive.google.com/drive/folders/1v2e9DE3Bt-VFbP5dW0T7Jd0Kv2tdbsC7?usp=drive_link" },
+      { "title": "CURSOS DE VENDAS", "url": "https://drive.google.com/drive/folders/1GN1HTOMJ7uHBZIPpAiChf-LnUVWa13AU?usp=drive_link" },
+      { "title": "CURSOS VOLTADO A SAÚDE", "url": "https://drive.google.com/drive/folders/1LE_S1d1bBUREVfHGCe7c4JUSLBR29Xak?usp=drive_link" },
+      { "title": "CURSOS DE PROGRAMAÇÃO", "url": "https://drive.google.com/drive/folders/1gpgfow0pwU_lvi1pyhCdIMueLsOSt0aK?usp=drive_link" },
+      { "title": "CURSOS PROFICIONALIZANTES", "url": "https://drive.google.com/drive/folders/11VggVqeaata1EW9wP8bs7QeddZRqgEuu?usp=drive_link" },
+      { "title": "CURSOS ESTRUTURA MUSICAL", "url": "https://drive.google.com/drive/folders/1LEGnYCvASuXJJHC2eV_-3i9RxnzHgo86?usp=drive_link" },
+      { "title": "CURSOS MERCADO FINANCEIRO", "url": "https://drive.google.com/drive/folders/1GdaKQXsrNvYO_IuLAY0Cx03nlSlJwRcX?usp=drive_link" },
+      { "title": "CURSOS DE MEDICINA", "url": "https://drive.google.com/drive/folders/1s3nkX4hRuruNRITO4ECJsZtfL0Xu11in?usp=drive_link" },
+      { "title": "CURSOS DE MARKETING", "url": "https://drive.google.com/drive/folders/1nv1fADGKZxoaxzXYibC-lGlrU7qQInr6?usp=drive_link" },
+      { "title": "CURSOS DE IDIOMAS", "url": "https://drive.google.com/drive/folders/15FNlSuqJRTuP5EF93BH4McHCq8Rf4Obs?usp=drive_link" },
+      { "title": "CURSOS DE ENGENHARIA", "url": "https://drive.google.com/drive/folders/1gm2Y17MdMq7EbB5EgmQ9qOZ6cDhTCwsb?usp=drive_link" },
+      { "title": "CURSOS DE FOTOGRAFIA", "url": "https://drive.google.com/drive/folders/12OavAkUtcFc1W7S5FXNJQK1xC0NbhmEs?usp=drive_link" },
+      { "title": "CURSO DE ELETRÔNICA", "url": "https://drive.google.com/drive/folders/1msaqU_Jnz5k7wZxUqumb363jzKLF0Oe_?usp=drive_link" },
+      { "title": "CURSO EDIÇÃO DE VÍDEOS", "url": "https://drive.google.com/drive/folders/1iYvgAaFkZjHkBUAlilk__aSr6Y_Gnvk6?usp=drive_link" },
+      { "title": "CURSOS DE DROP", "url": "https://drive.google.com/drive/folders/1vsvA53aTcEjYwEVOOoIDJJfxdfMJzVuh?usp=drive_link" },
+      { "title": "CURSOS DESENVOLVIMENTO PESSOAL", "url": "https://drive.google.com/drive/folders/1KARIkqEHxd-yzKLl2ywo7ALMaiYnSKCQ?usp=drive_link" },
+      { "title": "CURSOS DESENHO 3D", "url": "https://drive.google.com/drive/folders/1f3LRnTVwdwDGZNV0Cc54G-EYjdpXGlER?usp=drive_link" },
+      { "title": "CURSOS DE CULINÁRIA", "url": "https://drive.google.com/drive/folders/1WZOwofm1ClRFhCMUf9Bd5mLnixCS60IS?usp=drive_link" },
+      { "title": "CURSOS PARA CONCURSOS", "url": "https://drive.google.com/drive/folders/1y77LqnDnHt4mgw2dkg1AqqMIx1czv-Jg?usp=drive_link" },
+      { "title": "CURSOS VARIADOS", "url": "https://drive.google.com/drive/folders/1K6_3plItcO3BTGPkJLcD7dkqzSDA5UIQ?usp=drive_link" },
+      { "title": "CURSO ARQUITETURA", "url": "https://drive.google.com/drive/folders/1WK84t8OreeCP_YddVJLKgUzeJ_np2P0i?usp=drive_link" },
+      { "title": "CURSOS TI &amp; HARDWARE", "url": "https://drive.google.com/drive/folders/1HoeMUDPBRqmrexzSSx_7OCKZ7DfkoMK5?usp=drive_link" },
+      { "title": "CURSOS ADMINISTRAÇÃO", "url": "https://drive.google.com/drive/folders/1IES0-WSsXSK-Ed8-MVwnbvLN7ARIBj8u?usp=drive_link" },
+      { "title": "CURSOS E NEGÓCIOS", "url": "https://drive.google.com/drive/folders/1IES0-WSsXSK-Ed8-MVwnbvLN7ARIBj8u?usp=drive_link" },
+      { "title": "MEGA PACK FIGURINHAS", "url": "https://drive.google.com/drive/folders/1XtcY4_i4YRtmG3jA2-UjCeJwrBNpcuBj" },
+      { "title": "CURSOS DIVERSOS", "url": "https://drive.google.com/drive/folders/1iYM-gxW5-iKFpH3ylT4oVWnI2veIwu5A?usp=drive_link" },
+    ];
+
+    // Insere os links na página
+    const container = document.getElementById("link-list");
+    links.forEach(link => {
+      const a = document.createElement("a");
+      a.href = link.url;
+      a.textContent = link.title;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      container.appendChild(a);
+    });
+  </script>
+</body>
+
+</html>

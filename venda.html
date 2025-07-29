@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Adquira seu Acesso - Troco Online</title>
+
+  <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #001f4d, #000000);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(0, 0, 0, 0.85);
+      padding: 40px 40px;
+      border-radius: 20px;
+      max-width: 900px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid #fdbb2d;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #fdbb2d;
+      text-shadow: 0 0 10px #fdbb2d;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 35px;
+      color: #ddd;
+      line-height: 1.6;
+      text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 40px;
+      text-align: left;
+      padding-left: 0;
+    }
+
+    ul li {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      padding-left: 35px;
+      position: relative;
+      color: #fff;
+      font-weight: 600;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+    }
+
+    ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      color: #fdbb2d;
+      font-weight: 900;
+      font-size: 1.3rem;
+      text-shadow: 0 0 5px #fdbb2d;
+    }
+
+    /* Seção dos itens - imagens + títulos */
+    .itens-lista {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .item {
+      background: rgba(253, 187, 45, 0.1);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(253, 187, 45, 0.3);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(253, 187, 45, 0.6);
+    }
+
+    .item img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 2px solid #fdbb2d;
+      background: #fff;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fdbb2d;
+      text-shadow: 0 0 6px #fdbb2d;
+    }
+
+    /* Estilo para o valor antes do botão */
+    .preco {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fdbb2d;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px #fdbb2d;
+    }
+
+    .btn-comprar {
+      background: #fdbb2d;
+      color: #1a2a6c;
+      font-size: 1.4rem;
+      font-weight: 700;
+      padding: 18px 45px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-shadow: 0 8px 20px rgba(253, 187, 45, 0.6);
+      transition: background 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 2px;
+    }
+
+    .btn-comprar:hover {
+      background: #e6a922;
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(230, 169, 34, 0.8);
+    }
+
+    .voltar {
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #ccc;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .voltar a {
+      color: #fdbb2d;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .voltar a:hover {
+      color: #e6a922;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        padding: 30px 25px;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      ul li {
+        font-size: 1rem;
+        padding-left: 30px;
+      }
+
+      .btn-comprar {
+        font-size: 1.2rem;
+        padding: 15px 35px;
+      }
+
+      .itens-lista {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- Lista dos itens com imagens e títulos -->
+    <div class="itens-lista">
+      <div class="item">
+        <img src="images/canva pro.jpg" alt="Canva Pro" />
+        <div class="item-title">Canva Pro</div>
+      </div>
+      <div class="item">
+        <img src="images/chatgps.png" alt="Chatgpt Pro" />
+        <div class="item-title">Chatgpt Pro</div>
+      </div>
+      <div class="item">
+        <img src="images/claude ai.jpg" alt="Claude Ai" />
+        <div class="item-title">Claude Ai</div>
+      </div>
+      <div class="item">
+        <img src="images/cursor pro.png" alt="Cursos Pró" />
+        <div class="item-title">Cursor Pro</div>
+      </div>
+      <div class="item">
+        <img src="images/deepl.jpg" alt="DeepL" />
+        <div class="item-title">DeepL</div>
+      </div>
+      <div class="item">
+        <img src="images/wasender.png" alt="Wasender com Gerador de licença para revenda" />
+        <div class="item-title">Wasender com Gerador de licença para revenda</div>
+      </div>
+    </div>
+
+    <h1>Acesso Premium</h1>
+    <p>Desbloqueie todo o conteúdo exclusivo da nossa plataforma e tenha acesso ilimitado.</p>
+
+    <ul>
+      <li>Acesso imediato ao painel exclusivo</li>
+      <li>Conteúdo atualizado</li>
+      <li>Suporte personalizado por WhatsApp</li>
+      <li>Sem publicidade</li>
+      <li>Pague no Pix, boleto ou cartão de crédito em até 2x</li>
+
+      <li><u><a href="https://drive.google.com/file/d/1appu2BJ_dzIpKjemN-vXPGX9eBXPXkP9/view?usp=sharing"
+            target="_blank" style="color:#fdbb2d;">Acesse aqui a lista de conteúdos</a></u></li>
+    </ul>
+
+    <!-- Valor destacado -->
+    <div class="preco">POR APENAS<br>R$ 39,90</div>
+
+    <a class="btn-comprar" href="https://pay.kiwify.com.br/leBNaye" target="_blank" rel="noopener noreferrer">Comprar
+      Agora</a>
+
+    <div class="voltar">
+      <p>Já tem uma conta? <a href="login.html">Voltar ao login</a></p>
+    </div>
+  </div>
+</body>
+
+</html>

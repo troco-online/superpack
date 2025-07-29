@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Cadastro - Troco Online</title>
+
+  <head>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      /* fundo preto */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .signup-container {
+      background: #121212;
+      /* tom escuro para o container */
+      padding: 40px 30px;
+      border-radius: 16px;
+      border: 2px solid transparent;
+      box-shadow:
+        inset 0 0 10px #2d4a73,
+        0 4px 20px rgba(45, 74, 115, 0.7);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      color: #eee;
+      transition: border-color 0.3s ease;
+    }
+
+    .signup-container:hover {
+      border-color: #2d4a73;
+    }
+
+    .signup-container img.logo {
+      width: 120px;
+      margin: 0 auto 25px auto;
+      display: block;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 25px;
+      color: #2d4a73;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1.5px solid #2d4a73;
+      border-radius: 10px;
+      font-size: 16px;
+      background: #1a1a1a;
+      color: #eee;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: #5a7dbf;
+      box-shadow: 0 0 8px #5a7dbf;
+      background: #222;
+    }
+
+    button {
+      width: 100%;
+      background: #2d4a73;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(45, 74, 115, 0.8);
+    }
+
+    button:hover {
+      background: #1c334f;
+      box-shadow: 0 6px 18px rgba(28, 51, 79, 0.9);
+    }
+
+    #mensagem {
+      margin-top: 15px;
+      font-weight: bold;
+      display: none;
+    }
+
+    #mensagem.sucesso {
+      color: #4caf50;
+    }
+
+    #mensagem.erro {
+      color: #e53935;
+    }
+
+    .link-login {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .link-login a {
+      color: #2d4a73;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .link-login a:hover {
+      text-decoration: underline;
+      color: #5a7dbf;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="signup-container">
+    <!-- Logo acima do título -->
+    <img src="images/renda.png" alt="Logo Troco Online" class="logo" />
+
+    <h2>Crie sua conta</h2>
+
+    <form id="signup-form">
+      <input type="email" id="email" placeholder="Seu email" required />
+      <input type="password" id="senha" placeholder="Crie uma senha" required />
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <div class="link-login">
+      Já tem conta? <a href="login.html">Entrar</a>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBdztMtryFkEIZMFmxem8YS7EtQiceQMYc",
+      authDomain: "links-site-9fc41.firebaseapp.com",
+      projectId: "links-site-9fc41",
+      storageBucket: "links-site-9fc41.appspot.com",
+      messagingSenderId: "1018261083148",
+      appId: "1:1018261083148:web:174e3ac80a3d9adf764a29"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("signup-form");
+    const mensagem = document.getElementById("mensagem");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const senha = document.getElementById("senha").value;
+
+      // Limpar classes anteriores e exibir a div de mensagem
+      mensagem.classList.remove("erro", "sucesso");
+      mensagem.style.display = "block";
+
+      if (!nome || !email || !senha) {
+        mensagem.textContent = "Preencha todos os campos.";
+        mensagem.classList.add("erro");
+        return;
+      }
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, senha);
+        const user = userCredential.user;
+
+        await setDoc(doc(db, "usuarios", user.uid), {
+          nome: nome,
+          email: email
+        });
+
+        mensagem.textContent = "✅ Cadastro realizado com sucesso! Redirecionando...";
+        mensagem.classList.add("sucesso");
+
+        setTimeout(() => {
+          window.location.href = "login.html";
+        }, 2000);
+
+      } catch (error) {
+        let erro = "Erro ao cadastrar.";
+        if (error.code === "auth/email-already-in-use") {
+          erro = "Este email já está cadastrado.";
+        } else if (error.code === "auth/weak-password") {
+          erro = "A senha deve ter pelo menos 6 caracteres.";
+        }
+        mensagem.textContent = "❌ " + erro;
+        mensagem.classList.add("erro");
+      }
+    });
+  </script>
+</body>
+
+</html>
